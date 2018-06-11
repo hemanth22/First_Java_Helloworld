@@ -1,7 +1,4 @@
 language: bash
-
-env:
-  - container_id=${container_id:-$timestamp}
  
 services:
   - docker
@@ -10,8 +7,6 @@ before_script:
   - docker pull java:7
 
 script:
-  - export container_id=$(date +%s)
-  - export cleanup=false
 
   - docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javac HelloWorld.java
   - echo "Listing class files"
