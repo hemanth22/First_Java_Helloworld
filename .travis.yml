@@ -1,0 +1,25 @@
+language: java
+
+env:
+  - container_id=${container_id:-$timestamp}
+ 
+services:
+  - docker
+
+before_install:
+  - docker pull java:7
+
+script:
+  - export container_id=$(date +%s)
+  - export cleanup=false
+
+  - docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javac HelloWorld.java
+  - echo "Listing class files"
+  - ls -la
+  - echo "Output of java file"
+  - docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 java HelloWorld
+
+notifications:
+ slack:
+   rooms:
+     - nothingorganization:GN1JzklSpbMyfZVWcS05U6a0#mygitrepos
