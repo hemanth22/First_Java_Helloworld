@@ -1,4 +1,7 @@
 language: bash
+
+env:
+  - container_id=${container_id:-$timestamp}
  
 services:
   - docker
@@ -17,7 +20,7 @@ script:
   - docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 java HelloWorld
   
 after_script:
-  - docker images -a
+  - docker rmi $(docker images -aq)
 
 notifications:
  slack:
