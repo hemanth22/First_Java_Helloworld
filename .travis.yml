@@ -1,7 +1,4 @@
 language: bash
-
-env:
-  - container_id=${container_id:-$timestamp}
  
 services:
   - docker
