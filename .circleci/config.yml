@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    working_directory: /app
+    docker:
+      - image: java:7
+    steps:
+      - checkout
+      - run: javac HelloWorld.java
+      - run: java HelloWorld
+      - run: javap HelloWorld
