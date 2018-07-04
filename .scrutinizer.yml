@@ -3,8 +3,8 @@ build:
         docker: true          
     tests:
       override:
-          - command: docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javac -d . HelloWorld.java
+          - command: docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javac HelloWorld.java
           - command: ls -la
-          - command: docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 java HelloWorld.java
-          - command: docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javap HelloWorld.java
+          - command: docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 java HelloWorld
+          - command: docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javap HelloWorld
             on_node: 1 
