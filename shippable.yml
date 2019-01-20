@@ -1,0 +1,21 @@
+language: java
+
+jdk:
+  - oraclejdk8
+  
+branches:
+  only:
+    - UAT
+    
+build:
+  ci:
+    - javac HelloWorld.java
+    - java HelloWorld
+    - javap HelloWorld
+    
+integrations:
+  notifications:
+    - integrationName: "triggerResource"
+      type: webhook
+      payload:
+        - versionName=$BRANCH.$BUILD_NUMBER
