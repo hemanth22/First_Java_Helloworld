@@ -6,7 +6,14 @@ jobs:
       - image: java:7
     steps:
       - checkout
-      - run: javac HelloWorld.java
-      - run: java HelloWorld
-      - run: javap HelloWorld
-      #New build
+      - run:
+          name: Compile java code to  byte code.
+          command: javac HelloWorld.java
+          
+      - run:
+          name: Execute class byte code.
+          command: java HelloWorld
+          
+      - run:
+          name: Disassembles one or more class files.
+          command: javap HelloWorld
