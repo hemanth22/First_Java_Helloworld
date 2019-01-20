@@ -15,7 +15,8 @@ build:
     
 integrations:
   notifications:
-    - integrationName: "triggerResource"
-      type: webhook
-      payload:
-        - versionName=$BRANCH.$BUILD_NUMBER
+    - integrationName: email
+      type: email
+      on_success: always
+      on_failure: always
+      on_pull_request: always
