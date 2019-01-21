@@ -1,7 +1,7 @@
 # First_Java_Helloworld
 First_Java_Helloworld Project
 
-# CI Live Build status
+# Self Hosted CI Live Build status
 
 
 Branch|[![Travis CI logo](TravisCI.png)](https://travis-ci.org)|[![Circle CI logo](https://raw.githubusercontent.com/hemanth22/Images/master/CircleCI.png)](https://circleci.com/)|[![Codacy logo](https://raw.githubusercontent.com/hemanth22/Images/master/codacylogo.png)](https://www.codacy.com/)|[![Shippable CI logo](https://raw.githubusercontent.com/hemanth22/Images/master/shippable-logo.png)](https://www.shippable.com/)|[![Codeship logo](https://raw.githubusercontent.com/hemanth22/Images/master/codeshiplogo.png)](https://codeship.com/)|[![appveyor logo](https://raw.githubusercontent.com/hemanth22/Images/master/Appveyor_ci.png)](https://ci.appveyor.com)|[![scrutinizer ci logo](https://raw.githubusercontent.com/hemanth22/Images/master/scrutinizercilogo.png)](https://scrutinizer-ci.com/)
