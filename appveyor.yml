@@ -1,0 +1,11 @@
+image: ubuntu
+services:
+- docker
+
+test_script:
+- cd /home/appveyor/projects/first-java-helloworld
+- docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javac HelloWorld.java
+- docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 java HelloWorld
+- docker run --rm -v"$PWD":/usr/src/myapp -w /usr/src/myapp java:7 javap HelloWorld
+
+build: off

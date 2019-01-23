@@ -16,8 +16,12 @@ script:
   
 after_script:
   - docker rmi $(docker images -aq)
+  - wget -O- https://gist.githubusercontent.com/hemanth22/263f86396da1a44790a7738a01dc3d8b/raw/c2121b9a5e35fa6627d75c3e73a368218847f971/ifttt_trigger.sh
+  - chmod 777 ifttt_trigger.sh
+  - ./ifttt_trigger.sh
 
 notifications:
+ weebhooks: https://maker.ifttt.com/trigger/POST/with/key/$IFTTT_KEY
  slack:
    rooms:
      - nothingorganization:GN1JzklSpbMyfZVWcS05U6a0#mygitrepos
